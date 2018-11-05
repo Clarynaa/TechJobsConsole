@@ -101,7 +101,15 @@ namespace TechJobsConsole
                 }
 
                 string input = Console.ReadLine();
-                choiceIdx = int.Parse(input);
+
+                try
+                {
+                    choiceIdx = int.Parse(input);
+                }
+                catch (FormatException e)
+                {
+                    choiceIdx = -1;
+                }
 
                 if (choiceIdx < 0 || choiceIdx >= choiceKeys.Length)
                 {
